@@ -6,8 +6,7 @@ pipeline {
       steps {
         sh 'echo List files'
         sh 'ls -ls'
-        sh 'checkout project'
-        sh 'pwd'
+        sh 'echo checkout project'
         git 'https://github.com/ChristopherGerlier/jenkins2-course-spring-boot.git'
       }
     }
