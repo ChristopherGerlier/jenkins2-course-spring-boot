@@ -18,7 +18,7 @@ pipeline {
 
     stage('archival') {
       steps {
-        step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/TEST-*.xml'])
+        step([$class: 'JUnitResultArchiver', testResults: 'spring-boot-samples/spring-boot-sample-atmosphere/surefire-reports/TEST-*.xml'])
         archiveArtifacts 'spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar'
       }
     }
