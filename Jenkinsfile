@@ -13,11 +13,8 @@ pipeline {
         dir('spring-boot-samples/spring-boot-sample-atmosphere') {
           sh 'mvn clean package'
         }
-      }
-      steps {
         archiveArtifacts 'spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar'
       }
     }
-
   }
 }
