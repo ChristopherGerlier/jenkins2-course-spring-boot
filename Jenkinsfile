@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        sh 'echoList files'
+        sh 'echo List files'
         sh 'ls -ls'
       }
     }
