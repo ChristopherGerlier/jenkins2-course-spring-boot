@@ -6,6 +6,8 @@ pipeline {
       steps {
         sh 'echo List files'
         sh 'ls -ls'
+        sh 'echo where are we'
+        sh 'pwd'
       }
     }
 
