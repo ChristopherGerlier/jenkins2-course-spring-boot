@@ -4,16 +4,20 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        sh 'echo checkout project'
         git 'https://github.com/ChristopherGerlier/jenkins2-course-spring-boot.git'
       }
     }
 
     stage ('Compile stage') {
       steps {
-        sh 'echo coucou 2'
-        sh 'mvn -f spring-boot-samples/spring-boot-sample-atmosphere/pom.xml clean package'
+        dir('spring-boot-samples/spring-boot-sample-atmosphere') {
+          sh 'mvn clean package'
+        }
+      }
+      steps {
+        archiveArtifacts 'spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar'
       }
     }
+
   }
 }
