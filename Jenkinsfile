@@ -7,7 +7,7 @@ pipeline {
         sh 'echo List files'
         sh 'ls -ls'
         sh 'echo checkout project'
-        git 'https://github.com/ChristopherGerlier/jenkins2-course-spring-boot.git'
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/ChristopherGerlier/jenkins2-course-spring-boot.git']]])
       }
     }
 
