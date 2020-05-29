@@ -3,7 +3,9 @@ pipeline {
 
   stages {
     stage('checkout') {
-      sh 'echo coucou 1'
+      steps {
+        sh 'echo coucou 1'
+      }
     }
 
     stage ('Compile stage') {
