@@ -8,13 +8,16 @@ pipeline {
       }
     }
 
-    stage ('Compile stage') {
+    stage ('Compiling, test, packaging stage') {
       steps {
         dir('spring-boot-samples/spring-boot-sample-atmosphere') {
           sh 'mvn clean package'
         }
-        archiveArtifacts 'spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar'
       }
+    }
+
+    stage('archival') {
+      archiveArtifacts 'spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar'
     }
   }
 }
