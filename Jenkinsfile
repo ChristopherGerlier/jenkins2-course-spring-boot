@@ -17,7 +17,9 @@ pipeline {
     }
 
     stage('archival') {
-      archiveArtifacts 'spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar'
+      steps {
+        archiveArtifacts 'spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar'
+      }
     }
   }
 }
