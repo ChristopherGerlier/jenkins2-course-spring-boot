@@ -2,11 +2,11 @@ pipeline {
   agent any
 
   stages {
-    stage('checkout') {
-      steps {
-        checkout scm
-      }
-    }
+    // stage('checkout') {
+    //   steps {
+    //     checkout scm
+    //   }
+    // }
 
     stage ('Compiling, test, packaging stage') {
       steps {
