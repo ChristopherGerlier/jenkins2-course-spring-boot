@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        git 'https://github.com/ChristopherGerlier/jenkins2-course-spring-boot.git'
+        checkout scm
       }
     }
 
